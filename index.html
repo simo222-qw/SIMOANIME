@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090d">
+  <title>SIMOANIME — Discover Your Next Anime</title>
+  <meta name="description" content="Discover anime, explore genres, search titles and save your favorites on SIMOANIME.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="SIMOANIME home">SIMO<span>ANIME</span><i>✦</i></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#catalog">Anime</a>
+      <a href="#genres">Genres</a>
+      <a href="#watchlist">My List <span id="watchlist-count" class="count">0</span></a>
+    </nav>
+    <label class="search-wrap">
+      <span aria-hidden="true">⌕</span>
+      <input id="search-input" type="search" placeholder="Search anime..." autocomplete="off" aria-label="Search anime">
+      <kbd>/</kbd>
+    </label>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="live-dot"></span> YOUR NEXT ANIME ADVENTURE</p>
+        <h1>ENTER THE<br><span>ANIME</span> WORLD.</h1>
+        <p class="hero-copy">Discover unforgettable heroes, epic battles, mysterious worlds and stories that stay with you long after the final episode.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#catalog">Explore anime <span>↗</span></a>
+          <button class="btn btn-ghost" id="surprise-btn" type="button">Surprise me ✦</button>
+        </div>
+        <div class="hero-stats">
+          <div><strong>12+</strong><span>Titles to explore</span></div>
+          <div><strong>06</strong><span>Genres</span></div>
+          <div><strong>∞</strong><span>Adventures</span></div>
+        </div>
+      </div>
+      <div class="hero-side-note">DREAM · FIGHT · BECOME</div>
+    </section>
+
+    <section class="section container" id="catalog">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2>Popular <span>anime</span></h2>
+        </div>
+        <p class="section-subtitle">Find your next obsession.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="filter-pills" id="filter-pills" aria-label="Filter by genre">
+          <button class="pill active" data-genre="All" type="button">All anime</button>
+          <button class="pill" data-genre="Action" type="button">Action</button>
+          <button class="pill" data-genre="Fantasy" type="button">Fantasy</button>
+          <button class="pill" data-genre="Adventure" type="button">Adventure</button>
+          <button class="pill" data-genre="Drama" type="button">Drama</button>
+          <button class="pill" data-genre="Sci-Fi" type="button">Sci-Fi</button>
+        </div>
+        <label class="sort-wrap">Sort:
+          <select id="sort-select" aria-label="Sort anime">
+            <option value="featured">Featured</option>
+            <option value="rating">Top rated</option>
+            <option value="title">Title A–Z</option>
+          </select>
+        </label>
+      </div>
+
+      <p class="results-line" id="results-line" aria-live="polite">Showing all titles</p>
+      <div class="anime-grid" id="anime-grid"></div>
+      <div class="empty-state hidden" id="empty-state">
+        <span>⌕</span>
+        <h3>No anime found</h3>
+        <p>Try another title or choose a different genre.</p>
+        <button class="btn btn-ghost" id="reset-filters" type="button">Reset filters</button>
+      </div>
+    </section>
+
+    <section class="feature-section container">
+      <div class="feature-card">
+        <div class="feature-text">
+          <p class="eyebrow">YOUR PERSONAL COLLECTION</p>
+          <h2>Keep the stories<br>you <span>love.</span></h2>
+          <p>Save titles to your list and find them again whenever you return. Your list is saved in this browser.</p>
+          <a class="btn btn-primary" href="#watchlist">Open my list <span>↗</span></a>
+        </div>
+        <div class="feature-orbit" aria-hidden="true"><div class="orbit-ring"></div><div class="orbit-core">影</div><span class="orbit-star star-one">✦</span><span class="orbit-star star-two">✧</span></div>
+      </div>
+    </section>
+
+    <section class="section container" id="genres">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PICK YOUR MOOD</p>
+          <h2>Explore <span>genres</span></h2>
+        </div>
+      </div>
+      <div class="genre-grid">
+        <button class="genre-tile" data-genre-tile="Action" type="button"><span class="genre-icon">⚔</span><span>Action</span><small>Fight for what matters</small></button>
+        <button class="genre-tile" data-genre-tile="Fantasy" type="button"><span class="genre-icon">✧</span><span>Fantasy</span><small>Worlds beyond reality</small></button>
+        <button class="genre-tile" data-genre-tile="Adventure" type="button"><span class="genre-icon">➶</span><span>Adventure</span><small>Go beyond the map</small></button>
+        <button class="genre-tile" data-genre-tile="Drama" type="button"><span class="genre-icon">☾</span><span>Drama</span><small>Stories that hit deep</small></button>
+        <button class="genre-tile" data-genre-tile="Sci-Fi" type="button"><span class="genre-icon">⌬</span><span>Sci-Fi</span><small>Future unknown</small></button>
+        <button class="genre-tile" data-genre-tile="Mystery" type="button"><span class="genre-icon">◉</span><span>Mystery</span><small>Find the hidden truth</small></button>
+      </div>
+    </section>
+
+    <section class="section container watchlist-section" id="watchlist">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SAVED FOR LATER</p>
+          <h2>My <span>watchlist</span></h2>
+        </div>
+        <button class="text-button" id="clear-watchlist" type="button">Clear list</button>
+      </div>
+      <div class="anime-grid" id="watchlist-grid"></div>
+      <div class="watchlist-empty" id="watchlist-empty">
+        <span>♡</span>
+        <p>Your list is empty for now.</p>
+        <small>Tap the heart on any anime card to save it here.</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#">SIMO<span>ANIME</span><i>✦</i></a>
+    <p>A fan-made anime discovery demo. Made for curious fans.</p>
+    <p class="footer-small">Artwork is loaded from external image URLs. This site does not host or stream anime episodes.</p>
+    <span>© 2026 SIMOANIME</span>
+  </footer>
+
+  <dialog id="details-dialog" class="details-dialog">
+    <button class="dialog-close" id="dialog-close" aria-label="Close details" type="button">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
