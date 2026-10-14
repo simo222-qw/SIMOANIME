@@ -2,7 +2,7 @@ const animeData = [
   {
     id: "black-clover", title: "Black Clover", year: 2017, rating: 8.2,
     genre: "Fantasy", tags: ["Action", "Fantasy", "Adventure"], status: "Series",
-    image: "file:///C:/Users/hp/Downloads/Black%20clover%20wallpaper.jpg",
+    image: "https://i.pinimg.com/1200x/5a/b7/9b/5ab79bce80a7d1fc2438a387775bf445.jpg",
     description: "In a world where magic is everything, Asta dreams of becoming the Wizard King despite being born without magic. A story about persistence, friendship and refusing to give up."
   },
   {
@@ -14,7 +14,7 @@ const animeData = [
   {
     id: "jujutsu-kaisen", title: "Jujutsu Kaisen", year: 2020, rating: 8.5,
     genre: "Action", tags: ["Action", "Fantasy"], status: "Series",
-    image: "file:///C:/Users/hp/Downloads/download%20(2).jpg",
+    image: "https://i.pinimg.com/736x/ac/b3/55/acb35577cd0d0fca9af33725f34579d2.jpg",
     description: "A high-school student enters the dangerous world of curses and sorcerers after a fateful encounter. Dark supernatural action with a memorable cast."
   },
   {
